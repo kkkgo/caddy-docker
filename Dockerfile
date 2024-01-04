@@ -19,4 +19,7 @@ RUN go run main.go build latest \
 FROM alpine:edge
 COPY --from=builder /data/xcaddy/cmd/xcaddy/caddy /usr/bin/
 WORKDIR /data
-CMD caddy run --config caddyfile --adapter caddyfile
+ENV TZ=Asia/Shanghai \
+    DNS=""
+COPY init.sh /
+CMD sh /init.sh
