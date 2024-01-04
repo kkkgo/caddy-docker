@@ -6,4 +6,4 @@ else
     echo "Apply DNS: ""$DNS"
     echo "$DNS" | grep -Eo "[^,]+" | sed "s/^/nameserver /g" >/etc/resolv.conf
 fi
-caddy run --config caddyfile --adapter caddyfile
+caddy run --config caddyfile.txt --adapter caddyfile

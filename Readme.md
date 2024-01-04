@@ -17,7 +17,7 @@
 --with github.com/caddy-dns/route53
 ```
 有其他需要加的插件可以提。  
-caddyfile配置文件：`/data/caddyfile`，建议映射/data目录。  
+caddyfile配置文件：`/data/caddyfile.txt`，建议映射/data目录。  
 可用环境变量  
 ```shell
 # 设置时区
