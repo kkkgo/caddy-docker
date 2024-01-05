@@ -25,3 +25,6 @@ TZ=Asia/Shanghai
 # 设置容器DNS（解析证书API接口）
 DNS="1.1.1.1,8.8.8.8"
 ```
+
+# 示例配置
+详情参考 https://blog.03k.org/post/caddy-docker.html
