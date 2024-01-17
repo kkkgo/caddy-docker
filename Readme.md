@@ -23,7 +23,7 @@ caddyfile配置文件：`/data/caddyfile.txt`，建议映射/data目录。
 # 设置时区
 TZ=Asia/Shanghai
 # 设置容器DNS（解析证书API接口）
-DNS="1.1.1.1,8.8.8.8"
+DNS=223.5.5.5,8.8.8.8
 ```
 
 # 示例配置
