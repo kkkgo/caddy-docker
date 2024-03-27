@@ -1,5 +1,5 @@
 FROM alpine:edge AS builder
-RUN apk add go git
+RUN apk upgrade&&apk add go git
 WORKDIR /data
 RUN git clone https://github.com/caddyserver/xcaddy.git
 WORKDIR /data/xcaddy/cmd/xcaddy
