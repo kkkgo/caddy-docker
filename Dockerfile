@@ -13,9 +13,7 @@ RUN go run main.go build latest \
 --with github.com/caddy-dns/duckdns \
 --with github.com/caddy-dns/namecheap \
 --with github.com/caddy-dns/dynv6 \
---with github.com/caddy-dns/route53 \
---with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive
-
+--with github.com/caddy-dns/route53
 
 FROM alpine:edge
 COPY --from=builder /data/xcaddy/cmd/xcaddy/caddy /usr/bin/
