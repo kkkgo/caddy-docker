@@ -26,3 +26,20 @@ jobs:
           push: true
           platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
           tags: sliamb/caddy:latest
+  push-ecr:
+    needs: build
+    runs-on: ubuntu-latest
+    container: alpine:edge
+    steps:
+    - name: "Configure AWS Credentials"
+      uses: aws-actions/configure-aws-credentials@v4.0.2
+      with:
+        aws-region: us-east-1
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: install skopeo and aws-cli
+      run: apk update && apk upgrade && apk add skopeo aws-cli
+    - name: login ecr
+      run: aws ecr-public get-login-password --region us-east-1 | skopeo login --username AWS --password-stdin public.ecr.aws
+    - name: push ecr
+      run: skopeo copy --all docker://sliamb/caddy:latest docker://public.ecr.aws/sliamb/caddy:latest
