@@ -6,6 +6,7 @@ WORKDIR /data/xcaddy/cmd/xcaddy
 RUN go run main.go build latest \
 --with github.com/caddy-dns/cloudflare \
 --with github.com/caddy-dns/dnspod \
+--with github.com/caddy-dns/tencentcloud \
 --with github.com/caddy-dns/alidns \
 --with github.com/caddy-dns/acmedns \
 --with github.com/caddy-dns/godaddy \
