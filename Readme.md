@@ -5,16 +5,16 @@
 一个caddy的docker镜像，集成编译`dns providers`插件，Actions自动编译更新。  
 包括以下插件：
 ```
---with github.com/caddy-dns/cloudflare
---with github.com/caddy-dns/dnspod
---with github.com/caddy-dns/tencentcloud
---with github.com/caddy-dns/alidns
---with github.com/caddy-dns/acmedns
---with github.com/caddy-dns/godaddy
---with github.com/caddy-dns/digitalocean
---with github.com/caddy-dns/duckdns
---with github.com/caddy-dns/namecheap
---with github.com/caddy-dns/dynv6
+--with github.com/caddy-dns/cloudflare 
+--with github.com/caddy-dns/dnspod 
+--with github.com/caddy-dns/tencentcloud 
+--with github.com/caddy-dns/alidns 
+--with github.com/caddy-dns/acmedns 
+--with github.com/caddy-dns/godaddy 
+--with github.com/caddy-dns/digitalocean 
+--with github.com/caddy-dns/duckdns 
+--with github.com/caddy-dns/namecheap 
+--with github.com/caddy-dns/dynv6 
 --with github.com/caddy-dns/route53
 ```
 有其他需要加的插件可以提。  
