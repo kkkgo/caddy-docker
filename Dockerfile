@@ -1,7 +1,7 @@
 FROM alpine:edge AS builder
 RUN apk upgrade&&apk add go git
 WORKDIR /data
-RUN git clone https://github.com/caddyserver/xcaddy.git
+RUN git clone https://github.com/caddyserver/xcaddy.git --depth 1 
 WORKDIR /data/xcaddy/cmd/xcaddy
 RUN go run main.go build latest \
 --with github.com/caddy-dns/cloudflare \
