@@ -9,4 +9,4 @@ else
 fi
 ls -shan /data
 sed 's/\r$//' /data/caddyfile.txt >/tmp/caddyfile
-caddy run --config /tmp/caddyfile --adapter caddyfile
+exec caddy run --config /tmp/caddyfile --adapter caddyfile

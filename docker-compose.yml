@@ -1,0 +1,14 @@
+services:
+  caddy:
+    image: public.ecr.aws/sliamb/caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./data/caddy/:/data/
+      - ./www/:/var/www/
