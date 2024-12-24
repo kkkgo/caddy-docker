@@ -1,14 +1,17 @@
+# docker compose example
 services:
   caddy:
+    pull_policy: always
     image: public.ecr.aws/sliamb/caddy:latest
     container_name: caddy
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
     environment:
       - TZ=Asia/Shanghai
+      - DNS=223.5.5.5,8.8.8.8
     volumes:
-      - /usr/share/zoneinfo/Asia/Shanghai:/usr/share/zoneinfo/Asia/Shanghai:ro
-      - ./data/caddy/:/data/
-      - ./www/:/var/www/
+      - /share/Container/caddy/data:/data
+    network_mode: "host"
+    # Use mapping if not using host network_mode.
+    # ports:
+    #   - "80:80"
+    #   - "443:443"
