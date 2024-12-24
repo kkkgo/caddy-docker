@@ -19,6 +19,11 @@ RUN /data/xcaddy/cmd/xcaddy/caddy -v
 
 FROM alpine:edge
 COPY --from=builder /data/xcaddy/cmd/xcaddy/caddy /usr/bin/
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache tzdata ca-certificates && \
+    update-ca-certificates && \
+    rm -rf /var/cache/apk/*
 WORKDIR /data
 ENV TZ=Asia/Shanghai \
     DNS=""
