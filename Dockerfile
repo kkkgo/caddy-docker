@@ -14,7 +14,8 @@ RUN go run main.go build latest \
 --with github.com/caddy-dns/duckdns \
 --with github.com/caddy-dns/namecheap \
 --with github.com/caddy-dns/dynv6 \
---with github.com/caddy-dns/route53
+--with github.com/caddy-dns/route53 \
+--with github.com/mholt/caddy-dynamicdns
 RUN /data/xcaddy/cmd/xcaddy/caddy -v
 
 FROM alpine:edge
