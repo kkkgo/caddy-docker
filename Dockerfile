@@ -5,7 +5,7 @@ RUN git clone https://github.com/caddyserver/xcaddy.git --depth 1
 WORKDIR /data/xcaddy/cmd/xcaddy
 RUN go run main.go build latest \
 --with github.com/caddy-dns/cloudflare \
---with github.com/caddy-dns/dnspod=github.com/kkkgo/dnspod@master \
+--with github.com/caddy-dns/dnspod \
 --with github.com/caddy-dns/tencentcloud \
 --with github.com/caddy-dns/alidns \
 --with github.com/caddy-dns/acmedns \
